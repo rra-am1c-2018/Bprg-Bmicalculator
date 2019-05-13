@@ -12,20 +12,36 @@ class Person {
 class Bmi extends Person{
   // Fields  
   private $bodymass;
-  var $bodylength;
-  var $bmi;
+  private $bodylength;
 
+  // Set-method voor bodymass field
   public function set_bodymass($bodymass) {
     if ($bodymass < 3 || $bodymass > 600) {
+      $this->bodymass = 0;
       echo "Dit gewicht is niet geldig<br>";
     } else {
       $this->bodymass = $bodymass;
     }
   }
-
+  // Get-method voor bodymass field
   public function get_bodymass() {
     return "Gewicht = " . $this->bodymass . "kg";
   }
+
+  // Set-method voor private field bodylength om het af te schermen (Encapsulation)
+  public function set_bodylength($bodylength) {
+    if ($bodylength < 0.5 || $bodylength > 2.75) {
+      echo "Bij deze lengte kunnen we geen BMI berekenen omdat het geen betekenis heeft";
+    } else {
+      $this->bodylength = $bodylength;
+    }
+  }
+  // Get-method voor private field bodylength
+  public function get_bodylength() {
+    return "Lichaamslengte = " . $this->bodylength . "m";
+  }
+
+
 
   // Dit is de constructor van de class. De constructor wordt automagical aangeroepen bij het maken van een object
   function __construct($args = []) {
@@ -36,13 +52,15 @@ class Bmi extends Person{
     $this->lastname = $args['lastname'] ?? 'onbekend';
     $this->bodymass = $args['bodymass'] ?? 0;
     $this->bodylength = $args['bodylength'] ?? 0.81;
-    $this->bmi = 0;
   }
 
   // We kunnen binnen de class ook methods maken (dat zijn gewoon functions)
-  function calculate_bmi() {
-    $this->bmi = $this->bodymass / ($this->bodylength * $this->bodylength);
-    echo "Beste " . $this->firstname . " " . $this->infix . " " . $this->lastname . " jouw bmi is: " . round($this->bmi,1) . "<br><hr>";
+  private function calculate_bmi() {
+    return $this->bodymass / ($this->bodylength * $this->bodylength);  
+  }
+
+  public function show_bmi() {
+    echo "Beste " . $this->firstname . " " . $this->infix . " " . $this->lastname . " jouw bmi is: " . round($this->calculate_bmi(),1) . "<br><hr>";
   }
 }
 

@@ -10,8 +10,8 @@
 
   echo $person1->firstname . "<br>";
   echo $person1->get_bodymass() . "<br>";
-  echo $person1->bodylength . "<br>";
-  $person1->calculate_bmi();
+  echo $person1->get_bodylength() . "<br>";
+  $person1->show_bmi();
 
   // We kunnen een nieuwe instantie maken van de class Bmi
   $person2 = new Bmi(['firstname'=>'Miranda', 'infix'=>'van', 'lastname'=>'Tegelen', 'bodymass'=>100, 'bodylength'=>1.45]);
@@ -21,15 +21,15 @@
 
   echo $person2->firstname . "<br>";
   echo $person2->get_bodymass() . "<br>";
-  echo $person2->bodylength  . "<br>";
-  $person2->calculate_bmi();
+  echo $person2->get_bodylength()  . "<br>";
+  $person2->show_bmi();
 
 
   $person3 = new Bmi(['firstname'=>'Bertje', 'infix'=>'de', 'lastname'=>'Vries', 'bodymass'=>200, 'bodylength'=>1.95]);
   echo $person3->firstname . "<br>";
   echo $person3->get_bodymass() . "<br>";
-  echo $person3->bodylength  . "<br>";
-  $person3->calculate_bmi();
+  echo $person3->get_bodylength()  . "<br>";
+  $person3->show_bmi();
 
 
 ?>
