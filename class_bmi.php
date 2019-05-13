@@ -11,9 +11,17 @@ class Person {
 // Deze class berekent de BMI waarde bij een gegeven massa en lengte van een persoon
 class Bmi extends Person{
   // Fields  
-  var $bodymass;
+  private $bodymass;
   var $bodylength;
   var $bmi;
+
+  public function set_bodymass($bodymass) {
+    if ($bodymass < 3 || $bodymass > 600) {
+      echo "Dit gewicht is niet geldig<br>";
+    } else {
+      $this->bodymass = $bodymass;
+    }
+  }
 
   // Dit is de constructor van de class. De constructor wordt automagical aangeroepen bij het maken van een object
   function __construct($args = []) {

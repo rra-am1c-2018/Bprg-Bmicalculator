@@ -6,6 +6,7 @@
   // $person1->firstname = "Arjan";
   // $person1->bodymass = 70;
   // $person1->bodylength = 1.8;
+  $person1->set_bodymass(900);
 
   echo $person1->firstname . "<br>";
   echo $person1->bodymass . "<br>";
