@@ -1,11 +1,16 @@
 <?php
-// Deze class berekent de BMI waarde bij een gegeven massa en lengte van een persoon
-class Bmi {
+class Person {
   // Fields
   var $id;
   var $firstname;
   var $infix;
   var $lastname;
+}
+
+
+// Deze class berekent de BMI waarde bij een gegeven massa en lengte van een persoon
+class Bmi extends Person{
+  // Fields  
   var $bodymass;
   var $bodylength;
   var $bmi;
