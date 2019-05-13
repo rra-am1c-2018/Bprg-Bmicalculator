@@ -1,15 +1,16 @@
 <?php
 class Person {
   // Fields
-  var $id;
-  var $firstname;
-  var $infix;
-  var $lastname;
+  private $id;
+  private $firstname;
+  private $infix;
+  private $lastname;
 }
 
 
 // Deze class berekent de BMI waarde bij een gegeven massa en lengte van een persoon
-class Bmi extends Person{
+// Bmi is een subclass van Person
+class Bmi extends Person {
   // Fields  
   private $bodymass;
   private $bodylength;
@@ -22,6 +23,7 @@ class Bmi extends Person{
     } else {
       $this->bodymass = $bodymass;
     }
+    return $this->bodymass;
   }
   // Get-method voor bodymass field
   public function get_bodymass() {
@@ -39,6 +41,10 @@ class Bmi extends Person{
   // Get-method voor private field bodylength
   public function get_bodylength() {
     return "Lichaamslengte = " . $this->bodylength . "m";
+  }
+
+  public function get_firstname() {
+    return $this->firstname;
   }
 
 
