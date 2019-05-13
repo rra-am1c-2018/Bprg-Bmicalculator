@@ -9,7 +9,7 @@
   $person1->set_bodymass(900);
 
   echo $person1->firstname . "<br>";
-  echo $person1->bodymass . "<br>";
+  echo $person1->get_bodymass() . "<br>";
   echo $person1->bodylength . "<br>";
   $person1->calculate_bmi();
 
@@ -20,14 +20,14 @@
   // $person2->bodylength = "1.45";
 
   echo $person2->firstname . "<br>";
-  echo $person2->bodymass . "<br>";
+  echo $person2->get_bodymass() . "<br>";
   echo $person2->bodylength  . "<br>";
   $person2->calculate_bmi();
 
 
   $person3 = new Bmi(['firstname'=>'Bertje', 'infix'=>'de', 'lastname'=>'Vries', 'bodymass'=>200, 'bodylength'=>1.95]);
   echo $person3->firstname . "<br>";
-  echo $person3->bodymass . "<br>";
+  echo $person3->get_bodymass() . "<br>";
   echo $person3->bodylength  . "<br>";
   $person3->calculate_bmi();
 

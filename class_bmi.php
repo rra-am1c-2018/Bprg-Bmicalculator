@@ -23,6 +23,10 @@ class Bmi extends Person{
     }
   }
 
+  public function get_bodymass() {
+    return "Gewicht = " . $this->bodymass . "kg";
+  }
+
   // Dit is de constructor van de class. De constructor wordt automagical aangeroepen bij het maken van een object
   function __construct($args = []) {
     // Een dubbele vraagteken ?? heet de coalesce operator
