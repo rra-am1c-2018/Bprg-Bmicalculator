@@ -59,6 +59,9 @@ class Bmi extends Person{
     return $this->bodymass / ($this->bodylength * $this->bodylength);  
   }
 
+  // Maak een private function make_full_name() en gebruik die in show_bmi
+  
+
   public function show_bmi() {
     echo "Beste " . $this->firstname . " " . $this->infix . " " . $this->lastname . " jouw bmi is: " . round($this->calculate_bmi(),1) . "<br><hr>";
   }
