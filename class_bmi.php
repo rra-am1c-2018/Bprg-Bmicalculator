@@ -60,10 +60,13 @@ class Bmi extends Person{
   }
 
   // Maak een private function make_full_name() en gebruik die in show_bmi
-  
+  private function make_full_name() {
+    return $this->firstname . " " . $this->infix . " " . $this->lastname;
+  }
+
 
   public function show_bmi() {
-    echo "Beste " . $this->firstname . " " . $this->infix . " " . $this->lastname . " jouw bmi is: " . round($this->calculate_bmi(),1) . "<br><hr>";
+    echo "Beste " . $this->make_full_name() . " jouw bmi is: " . round($this->calculate_bmi(),1) . "<br><hr>";
   }
 }
 
