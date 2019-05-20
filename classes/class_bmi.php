@@ -1,10 +1,10 @@
 <?php
 class Person {
   // Fields
-  private $id;
-  private $firstname;
-  private $infix;
-  private $lastname;
+  protected $id;
+  protected $firstname;
+  protected $infix;
+  protected $lastname;
 }
 
 
