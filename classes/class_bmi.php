@@ -61,6 +61,27 @@ class Bmi extends Person {
 
   private function interpretation_bmi() {
     $interpretation_text_bmi = "test";
+    switch (true) {
+      case ($this->calculate_bmi() < 18.5):
+        $interpretation_text_bmi = "Er is sprake van ondergewicht";
+        break;
+      case ($this->calculate_bmi() >= 18.5 && $this->calculate_bmi() < 25):
+        $interpretation_text_bmi = "Er is sprake van normaal gewicht";
+        break;
+      case ($this->calculate_bmi() >= 25 && $this->calculate_bmi() < 27):
+        $interpretation_text_bmi = "Er is sprake van licht overgewicht";
+        break;
+      case ($this->calculate_bmi() >= 27 && $this->calculate_bmi() < 30):
+        $interpretation_text_bmi = "Er is sprake van matig overgewicht";
+        break;
+      case ($this->calculate_bmi() >= 30 && $this->calculate_bmi() <= 40):
+        $interpretation_text_bmi = "Er is sprake van ernstig overgewicht";
+        break;
+      case ($this->calculate_bmi() > 40):
+        $interpretation_text_bmi = "Er is sprake van ziekelijkgewicht";
+        break;
+
+    }
     return $interpretation_text_bmi;
   }
 
@@ -71,7 +92,7 @@ class Bmi extends Person {
 
 
   public function show_bmi() {
-    echo "Beste " . $this->make_full_name() . " jouw bmi is: " . round($this->calculate_bmi(),1) . ". Dit betekent:" . $this->interpretation_bmi() . "<br><hr>";
+    echo "Beste " . $this->make_full_name() . " jouw bmi is: " . round($this->calculate_bmi(),1) . "<br>" . $this->interpretation_bmi() . "<br><hr>";
   }
 }
 
