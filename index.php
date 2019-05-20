@@ -29,7 +29,7 @@
   $person2->show_bmi();
 
 
-  $person3 = new Bmi(['firstname'=>'Bertje', 'infix'=>'de', 'lastname'=>'Vries', 'bodymass'=>130, 'bodylength'=>1.95]);
+  $person3 = new Bmi(['firstname'=>'Bertje', 'infix'=>'de', 'lastname'=>'Vries', 'bodymass'=>54.8, 'bodylength'=>1.98, 'age'=>6]);
   echo $person3->get_firstname() . "<br>";
   echo $person3->get_bodymass() . "<br>";
   echo $person3->get_bodylength()  . "<br>";

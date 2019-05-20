@@ -8,8 +8,12 @@ class Bmi extends Person {
   private $bodymass;
   private $bodylength;
   private $bmi_girls = [
-                        ['age'=>6, 'te licht'=>13.92, 'te zwaar'=>17.34, 'obesitas'=>19.65 ],
-                        ['age'=>7, 'te licht'=>14.00, 'te zwaar'=>17.75, 'obesitas'=>20.51 ]  
+                          6 =>['te licht'=>13.92, 'te zwaar'=>17.34, 'obesitas'=>19.65 ],
+                          7 =>['te licht'=>14.00, 'te zwaar'=>17.75, 'obesitas'=>20.51 ]  
+                       ];
+  private $bmi_boys =  [
+                          6 =>['te licht'=>14.03, 'te zwaar'=>17.55, 'obesitas'=>19.78 ],
+                          7 =>['te licht'=>14.06, 'te zwaar'=>17.92, 'obesitas'=>20.63 ]  
                        ];
 
   // Set-method voor bodymass field
@@ -67,27 +71,50 @@ class Bmi extends Person {
   private function interpretation_bmi() {
     $bmi = $this->calculate_bmi();
     $interpretation_text_bmi = "";
-    switch (true) {
-      case ($bmi < 18.5):
-        $interpretation_text_bmi = "Er is sprake van ondergewicht";
-        break;
-      case ($bmi >= 18.5 && $bmi < 25):
-        $interpretation_text_bmi = "Er is sprake van normaal gewicht";
-        break;
-      case ($bmi >= 25 && $bmi < 27):
-        $interpretation_text_bmi = "Er is sprake van licht overgewicht";
-        break;
-      case ($bmi >= 27 && $bmi < 30):
-        $interpretation_text_bmi = "Er is sprake van matig overgewicht";
-        break;
-      case ($bmi >= 30 && $bmi <= 40):
-        $interpretation_text_bmi = "Er is sprake van ernstig overgewicht";
-        break;
-      case ($bmi > 40):
-        $interpretation_text_bmi = "Er is sprake van ziekelijkgewicht";
-        break;
 
+    // Meenemen van de leeftijd in de berekening
+    for ($n=6; $n<=7; $n++ ) {
+      switch ($this->age) {
+        case $n:
+          switch (true) {
+            case ($bmi < $this->bmi_girls[$n]['te licht']):
+              $interpretation_text_bmi = "Je bent te licht";
+              break;
+            case ($bmi >= $this->bmi_girls[$n]['te licht'] && $bmi <= $this->bmi_girls[$n]['te zwaar']):
+              $interpretation_text_bmi = "Je hebt een gezond gewicht";
+              break;
+            case ($bmi >= $this->bmi_girls[$n]['te zwaar'] && $bmi <= $this->bmi_girls[$n]['obesitas']):
+              $interpretation_text_bmi = "Je bent te zwaar";
+              break;
+            case ($bmi > $this->bmi_girls[$n]['obesitas']):
+              $interpretation_text_bmi = "Je hebt ernstig overgewicht";
+              break;            
+          }
+      }
     }
+
+
+    // switch (true) {
+    //   case ($bmi < 18.5):
+    //     $interpretation_text_bmi = "Er is sprake van ondergewicht";
+    //     break;
+    //   case ($bmi >= 18.5 && $bmi < 25):
+    //     $interpretation_text_bmi = "Er is sprake van normaal gewicht";
+    //     break;
+    //   case ($bmi >= 25 && $bmi < 27):
+    //     $interpretation_text_bmi = "Er is sprake van licht overgewicht";
+    //     break;
+    //   case ($bmi >= 27 && $bmi < 30):
+    //     $interpretation_text_bmi = "Er is sprake van matig overgewicht";
+    //     break;
+    //   case ($bmi >= 30 && $bmi <= 40):
+    //     $interpretation_text_bmi = "Er is sprake van ernstig overgewicht";
+    //     break;
+    //   case ($bmi > 40):
+    //     $interpretation_text_bmi = "Er is sprake van ziekelijkgewicht";
+    //     break;
+
+    // }
     return $interpretation_text_bmi;
   }
 
@@ -98,7 +125,7 @@ class Bmi extends Person {
 
 
   public function show_bmi() {
-    echo "Beste " . $this->make_full_name() . " jouw bmi is: " . round($this->calculate_bmi(),1) . "<br>" . $this->interpretation_bmi() . "<br><hr>";
+    echo "Beste " . $this->make_full_name() . " jouw bmi is: " . round($this->calculate_bmi(),2) . "<br>" . $this->interpretation_bmi() . "<br><hr>";
   }
 }
 
