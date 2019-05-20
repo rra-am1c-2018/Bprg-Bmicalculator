@@ -1,12 +1,5 @@
 <?php
-class Person {
-  // Fields
-  protected $id;
-  protected $firstname;
-  protected $infix;
-  protected $lastname;
-}
-
+include("./classes/class_person.php");
 
 // Deze class berekent de BMI waarde bij een gegeven massa en lengte van een persoon
 // Bmi is een subclass van Person
@@ -58,11 +51,17 @@ class Bmi extends Person {
     $this->lastname = $args['lastname'] ?? 'onbekend';
     $this->bodymass = $args['bodymass'] ?? 0;
     $this->bodylength = $args['bodylength'] ?? 0.81;
+    $this->age = $args['age'] ?? 'onbekend';
   }
 
   // We kunnen binnen de class ook methods maken (dat zijn gewoon functions)
   private function calculate_bmi() {
     return $this->bodymass / ($this->bodylength * $this->bodylength);  
+  }
+
+  private function interpretation_bmi() {
+    $interpretation_text_bmi = "test";
+    return $interpretation_text_bmi;
   }
 
   // Maak een private function make_full_name() en gebruik die in show_bmi
@@ -72,7 +71,7 @@ class Bmi extends Person {
 
 
   public function show_bmi() {
-    echo "Beste " . $this->make_full_name() . " jouw bmi is: " . round($this->calculate_bmi(),1) . "<br><hr>";
+    echo "Beste " . $this->make_full_name() . " jouw bmi is: " . round($this->calculate_bmi(),1) . ". Dit betekent:" . $this->interpretation_bmi() . "<br><hr>";
   }
 }
 
