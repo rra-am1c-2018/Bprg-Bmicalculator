@@ -7,6 +7,7 @@ class Person {
   protected $infix;
   protected $lastname;
   protected $age;
+  protected $sex;
 }
 
 ?>

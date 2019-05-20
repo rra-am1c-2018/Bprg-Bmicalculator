@@ -7,6 +7,10 @@ class Bmi extends Person {
   // Fields  
   private $bodymass;
   private $bodylength;
+  private $bmi_girls = [
+                        ['age'=>6, 'te licht'=>13.92, 'te zwaar'=>17.34, 'obesitas'=>19.65 ],
+                        ['age'=>7, 'te licht'=>14.00, 'te zwaar'=>17.75, 'obesitas'=>20.51 ]  
+                       ];
 
   // Set-method voor bodymass field
   public function set_bodymass($bodymass) {
@@ -52,6 +56,7 @@ class Bmi extends Person {
     $this->bodymass = $args['bodymass'] ?? 0;
     $this->bodylength = $args['bodylength'] ?? 0.81;
     $this->age = $args['age'] ?? 'onbekend';
+    $this->sex = $args['sex'] ?? 'onbekend';
   }
 
   // We kunnen binnen de class ook methods maken (dat zijn gewoon functions)
@@ -60,24 +65,25 @@ class Bmi extends Person {
   }
 
   private function interpretation_bmi() {
-    $interpretation_text_bmi = "test";
+    $bmi = $this->calculate_bmi();
+    $interpretation_text_bmi = "";
     switch (true) {
-      case ($this->calculate_bmi() < 18.5):
+      case ($bmi < 18.5):
         $interpretation_text_bmi = "Er is sprake van ondergewicht";
         break;
-      case ($this->calculate_bmi() >= 18.5 && $this->calculate_bmi() < 25):
+      case ($bmi >= 18.5 && $bmi < 25):
         $interpretation_text_bmi = "Er is sprake van normaal gewicht";
         break;
-      case ($this->calculate_bmi() >= 25 && $this->calculate_bmi() < 27):
+      case ($bmi >= 25 && $bmi < 27):
         $interpretation_text_bmi = "Er is sprake van licht overgewicht";
         break;
-      case ($this->calculate_bmi() >= 27 && $this->calculate_bmi() < 30):
+      case ($bmi >= 27 && $bmi < 30):
         $interpretation_text_bmi = "Er is sprake van matig overgewicht";
         break;
-      case ($this->calculate_bmi() >= 30 && $this->calculate_bmi() <= 40):
+      case ($bmi >= 30 && $bmi <= 40):
         $interpretation_text_bmi = "Er is sprake van ernstig overgewicht";
         break;
-      case ($this->calculate_bmi() > 40):
+      case ($bmi > 40):
         $interpretation_text_bmi = "Er is sprake van ziekelijkgewicht";
         break;
 
