@@ -9,11 +9,29 @@ class Bmi extends Person {
   private $bodylength;
   private $bmi_girls = [
                           6 =>['te licht'=>13.92, 'te zwaar'=>17.34, 'obesitas'=>19.65 ],
-                          7 =>['te licht'=>14.00, 'te zwaar'=>17.75, 'obesitas'=>20.51 ]  
+                          7 =>['te licht'=>14.00, 'te zwaar'=>17.75, 'obesitas'=>20.51 ],  
+                          8 =>['te licht'=>14.16, 'te zwaar'=>18.35, 'obesitas'=>21.57 ],  
+                          9 =>['te licht'=>14.42, 'te zwaar'=>19.07, 'obesitas'=>22.81 ],  
+                          10 =>['te licht'=>14.78, 'te zwaar'=>19.86, 'obesitas'=>24.11 ], 
+                          11 =>['te licht'=>15.25, 'te zwaar'=>20.74, 'obesitas'=>25.42 ], 
+                          12 =>['te licht'=>15.83, 'te zwaar'=>21.68, 'obesitas'=>26.67 ],  
+                          13 =>['te licht'=>16.43, 'te zwaar'=>22.58, 'obesitas'=>27.76 ],  
+                          14 =>['te licht'=>17.01, 'te zwaar'=>23.34, 'obesitas'=>28.57 ],  
+                          15 =>['te licht'=>17.52, 'te zwaar'=>23.94, 'obesitas'=>29.11 ],  
+                          16 =>['te licht'=>17.95, 'te zwaar'=>24.37, 'obesitas'=>29.43 ]
                        ];
   private $bmi_boys =  [
                           6 =>['te licht'=>14.03, 'te zwaar'=>17.55, 'obesitas'=>19.78 ],
-                          7 =>['te licht'=>14.06, 'te zwaar'=>17.92, 'obesitas'=>20.63 ]  
+                          7 =>['te licht'=>14.06, 'te zwaar'=>17.92, 'obesitas'=>20.63 ],  
+                          8 =>['te licht'=>14.20, 'te zwaar'=>18.44, 'obesitas'=>21.60 ],
+                          9 =>['te licht'=>14.41, 'te zwaar'=>19.10, 'obesitas'=>22.77 ],
+                          10 =>['te licht'=>14.69, 'te zwaar'=>19.84, 'obesitas'=>24.00 ],
+                          11 =>['te licht'=>15.03, 'te zwaar'=>20.55, 'obesitas'=>25.10 ],
+                          12 =>['te licht'=>15.47, 'te zwaar'=>21.22, 'obesitas'=>26.02 ],
+                          13 =>['te licht'=>15.98, 'te zwaar'=>21.91, 'obesitas'=>26.84 ],
+                          14 =>['te licht'=>16.54, 'te zwaar'=>22.62, 'obesitas'=>27.63 ],
+                          15 =>['te licht'=>17.13, 'te zwaar'=>23.29, 'obesitas'=>28.30 ],
+                          16 =>['te licht'=>17.70, 'te zwaar'=>23.90, 'obesitas'=>28.88 ] 
                        ];
 
   // Set-method voor bodymass field
