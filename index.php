@@ -67,7 +67,15 @@
         </div>
       
       </section>
-      <section class="container"></section>
+      <section class="container">
+        <?php 
+          if (isset($_POST["test"])) {
+            echo "Test: " . $_POST["test"];
+          } else {
+            echo "Niets";
+          }
+        ?>
+      </section>
 
     </main>
 
