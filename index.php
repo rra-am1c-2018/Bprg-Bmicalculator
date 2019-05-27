@@ -15,39 +15,39 @@
       <section class="container-fluid"><h1>BMI CALCULATOR</h1></section>
       <section class="container">
         <div class="row">
-          <div class="col-4"></div>
-          <div class="col-4">
-            <form action="" method="post">
+          <div class="col-3"></div>
+          <div class="col-6">
+            <form action="./calculate_bmi.php" method="post">
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="firstname">Voornaam</label>
-                  <input type="text" class="form-control" id="firstname" placeholder="">
+                  <input type="text" class="form-control" id="firstname" placeholder="" name="firtname">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="infix">tussenvoegsel</label>
-                  <input type="text" class="form-control" id="infix" placeholder=""">
+                  <input type="text" class="form-control" id="infix" placeholder="" name="infix">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="lastname">Achternaam</label>
-                  <input type="text" class="form-control" id="lastname" placeholder="">
+                  <input type="text" class="form-control" id="lastname" placeholder="" name="lastname">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="bodyweight">Gewicht</label>
-                  <input type="number" step="any" class="form-control" id="bodyweight" placeholder="">
+                  <input type="number" step="any" class="form-control" id="bodyweight" placeholder="" name="bodyweight">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="bodylength">Lengte</label>
-                  <input type="number" step="any" class="form-control" id="bodylength" placeholder=""">
+                  <input type="number" step="any" class="form-control" id="bodylength" placeholder="" name="bodylength">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="age">Leeftijd</label>
-                  <input type="number" class="form-control" id="age" placeholder="">
+                  <input type="number" class="form-control" id="age" placeholder="" name="age">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="gender">Geslacht</label>
-                  <select id="gender" class="form-control">
+                  <select id="gender" class="form-control" name="gender">
                     <option selected>Kies</option>
                     <option value="girl" >Vrouw</option>
                     <option value="boy">Man</option>
@@ -63,7 +63,7 @@
               
               </form>
           </div>
-          <div class="col-4"></div>
+          <div class="col-3"></div>
         </div>
       
       </section>
