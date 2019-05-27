@@ -7,7 +7,7 @@ class Bmi extends Person {
   // Fields  
   private $bodymass;
   private $bodylength;
-  private $bmi_girls = [
+  private $bmi_girl = [
                           6 =>['te licht'=>13.92, 'te zwaar'=>17.34, 'obesitas'=>19.65 ],
                           7 =>['te licht'=>14.00, 'te zwaar'=>17.75, 'obesitas'=>20.51 ],  
                           8 =>['te licht'=>14.16, 'te zwaar'=>18.35, 'obesitas'=>21.57 ],  
@@ -20,7 +20,7 @@ class Bmi extends Person {
                           15 =>['te licht'=>17.52, 'te zwaar'=>23.94, 'obesitas'=>29.11 ],  
                           16 =>['te licht'=>17.95, 'te zwaar'=>24.37, 'obesitas'=>29.43 ]
                        ];
-  private $bmi_boys =  [
+  private $bmi_boy =  [
                           6 =>['te licht'=>14.03, 'te zwaar'=>17.55, 'obesitas'=>19.78 ],
                           7 =>['te licht'=>14.06, 'te zwaar'=>17.92, 'obesitas'=>20.63 ],  
                           8 =>['te licht'=>14.20, 'te zwaar'=>18.44, 'obesitas'=>21.60 ],
@@ -87,24 +87,25 @@ class Bmi extends Person {
   }
 
   private function interpretation_bmi() {
-    $bmi = $this->calculate_bmi();
+    $bmi = $this->calculate_bmi();;
     $interpretation_text_bmi = "";
+    $sex = "bmi_" . $this->sex;
 
     // Meenemen van de leeftijd in de berekening
-    for ($n=6; $n<=7; $n++ ) {
+    for ($n=6; $n<=16; $n++ ) {
       switch ($this->age) {
         case $n:
           switch (true) {
-            case ($bmi < $this->bmi_girls[$n]['te licht']):
+            case ($bmi < $this->$sex[$n]['te licht']):
               $interpretation_text_bmi = "Je bent te licht";
               break;
-            case ($bmi >= $this->bmi_girls[$n]['te licht'] && $bmi <= $this->bmi_girls[$n]['te zwaar']):
+            case ($bmi >= $this->$sex[$n]['te licht'] && $bmi <= $this->$sex[$n]['te zwaar']):
               $interpretation_text_bmi = "Je hebt een gezond gewicht";
               break;
-            case ($bmi >= $this->bmi_girls[$n]['te zwaar'] && $bmi <= $this->bmi_girls[$n]['obesitas']):
+            case ($bmi >= $this->$sex[$n]['te zwaar'] && $bmi <= $this->$sex[$n]['obesitas']):
               $interpretation_text_bmi = "Je bent te zwaar";
               break;
-            case ($bmi > $this->bmi_girls[$n]['obesitas']):
+            case ($bmi > $this->$sex[$n]['obesitas']):
               $interpretation_text_bmi = "Je hebt ernstig overgewicht";
               break;            
           }
