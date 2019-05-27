@@ -1,0 +1,10 @@
+.container-fluid {
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+  padding:1em;
+}
+
+.container-fluid h1 {
+  font-size: 5em;
+}
