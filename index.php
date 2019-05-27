@@ -32,6 +32,24 @@
                   <input type="text" class="form-control" id="lastname" placeholder="">
                 </div>
               </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="firstname">Gewicht</label>
+                  <input type="text" class="form-control" id="firstname" placeholder="">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="infix">Lengte</label>
+                  <input type="text" class="form-control" id="infix" placeholder=""">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="lastname">Leeftijd</label>
+                  <input type="text" class="form-control" id="lastname" placeholder="">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="lastname">Geslacht</label>
+                  <input type="text" class="form-control" id="lastname" placeholder="">
+                </div>
+              </div>
               <div class="form-group">
                 <label for="inputAddress">Address</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
