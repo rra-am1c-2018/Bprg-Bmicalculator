@@ -91,49 +91,50 @@ class Bmi extends Person {
     $interpretation_text_bmi = "";
     $sex = "bmi_" . $this->sex;
 
+    if ( $this->age <= 16 ) {
     // Meenemen van de leeftijd in de berekening
-    for ($n=6; $n<=16; $n++ ) {
-      switch ($this->age) {
-        case $n:
-          switch (true) {
-            case ($bmi < $this->$sex[$n]['te licht']):
-              $interpretation_text_bmi = "Je bent te licht";
-              break;
-            case ($bmi >= $this->$sex[$n]['te licht'] && $bmi <= $this->$sex[$n]['te zwaar']):
-              $interpretation_text_bmi = "Je hebt een gezond gewicht";
-              break;
-            case ($bmi >= $this->$sex[$n]['te zwaar'] && $bmi <= $this->$sex[$n]['obesitas']):
-              $interpretation_text_bmi = "Je bent te zwaar";
-              break;
-            case ($bmi > $this->$sex[$n]['obesitas']):
-              $interpretation_text_bmi = "Je hebt ernstig overgewicht";
-              break;            
-          }
+      for ($n=6; $n<=16; $n++ ) {
+        switch ($this->age) {
+          case $n:
+            switch (true) {
+              case ($bmi < $this->$sex[$n]['te licht']):
+                $interpretation_text_bmi = "Je bent te licht";
+                break;
+              case ($bmi >= $this->$sex[$n]['te licht'] && $bmi <= $this->$sex[$n]['te zwaar']):
+                $interpretation_text_bmi = "Je hebt een gezond gewicht";
+                break;
+              case ($bmi >= $this->$sex[$n]['te zwaar'] && $bmi <= $this->$sex[$n]['obesitas']):
+                $interpretation_text_bmi = "Je bent te zwaar";
+                break;
+              case ($bmi > $this->$sex[$n]['obesitas']):
+                $interpretation_text_bmi = "Je hebt ernstig overgewicht";
+                break;            
+            }
+        }
+      }
+
+    } else {
+      switch (true) {
+        case ($bmi < 18.5):
+          $interpretation_text_bmi = "Er is sprake van ondergewicht";
+          break;
+        case ($bmi >= 18.5 && $bmi < 25):
+          $interpretation_text_bmi = "Er is sprake van normaal gewicht";
+          break;
+        case ($bmi >= 25 && $bmi < 27):
+          $interpretation_text_bmi = "Er is sprake van licht overgewicht";
+          break;
+        case ($bmi >= 27 && $bmi < 30):
+          $interpretation_text_bmi = "Er is sprake van matig overgewicht";
+          break;
+        case ($bmi >= 30 && $bmi <= 40):
+          $interpretation_text_bmi = "Er is sprake van ernstig overgewicht";
+          break;
+        case ($bmi > 40):
+          $interpretation_text_bmi = "Er is sprake van ziekelijkgewicht";
+          break;
       }
     }
-
-
-    // switch (true) {
-    //   case ($bmi < 18.5):
-    //     $interpretation_text_bmi = "Er is sprake van ondergewicht";
-    //     break;
-    //   case ($bmi >= 18.5 && $bmi < 25):
-    //     $interpretation_text_bmi = "Er is sprake van normaal gewicht";
-    //     break;
-    //   case ($bmi >= 25 && $bmi < 27):
-    //     $interpretation_text_bmi = "Er is sprake van licht overgewicht";
-    //     break;
-    //   case ($bmi >= 27 && $bmi < 30):
-    //     $interpretation_text_bmi = "Er is sprake van matig overgewicht";
-    //     break;
-    //   case ($bmi >= 30 && $bmi <= 40):
-    //     $interpretation_text_bmi = "Er is sprake van ernstig overgewicht";
-    //     break;
-    //   case ($bmi > 40):
-    //     $interpretation_text_bmi = "Er is sprake van ziekelijkgewicht";
-    //     break;
-
-    // }
     return $interpretation_text_bmi;
   }
 

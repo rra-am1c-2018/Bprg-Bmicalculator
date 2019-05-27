@@ -5,7 +5,9 @@
                       'infix'=>'de',
                       'lastname'=>'Ruijter',
                       'bodymass'=>73,
-                      'bodylength'=>1.8]);
+                      'bodylength'=>1.8,
+                      'age'=>6,
+                      'sex'=>'boy']);
 
   // $person1->firstname = "Arjan";
   // $person1->bodymass = 70;
@@ -18,7 +20,7 @@
   $person1->show_bmi();
 
   // We kunnen een nieuwe instantie maken van de class Bmi
-  $person2 = new Bmi(['firstname'=>'Miranda', 'infix'=>'van', 'lastname'=>'Tegelen', 'bodylength'=>1.65, 'bodymass'=>80]);
+  $person2 = new Bmi(['firstname'=>'Miranda', 'infix'=>'van', 'lastname'=>'Tegelen', 'bodylength'=>1.65, 'bodymass'=>80, 'age'=>30]);
   // $person2->firstname = "Miranda";
   // $person2->bodymass = "100";
   // $person2->bodylength = "1.65";
