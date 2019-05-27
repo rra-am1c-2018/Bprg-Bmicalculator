@@ -34,57 +34,34 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
-                  <label for="firstname">Gewicht</label>
-                  <input type="text" class="form-control" id="firstname" placeholder="">
+                  <label for="bodyweight">Gewicht</label>
+                  <input type="number" step="any" class="form-control" id="bodyweight" placeholder="">
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="infix">Lengte</label>
-                  <input type="text" class="form-control" id="infix" placeholder=""">
+                  <label for="bodylength">Lengte</label>
+                  <input type="number" step="any" class="form-control" id="bodylength" placeholder=""">
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="lastname">Leeftijd</label>
-                  <input type="text" class="form-control" id="lastname" placeholder="">
+                  <label for="age">Leeftijd</label>
+                  <input type="number" class="form-control" id="age" placeholder="">
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="lastname">Geslacht</label>
-                  <input type="text" class="form-control" id="lastname" placeholder="">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-              </div>
-              <div class="form-group">
-                <label for="inputAddress2">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">City</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">State</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                  <label for="gender">Geslacht</label>
+                  <select id="gender" class="form-control">
+                    <option selected>Kies</option>
+                    <option value="girl" >Vrouw</option>
+                    <option value="boy">Man</option>
+                    <option value="trans">Trans</option>
                   </select>
                 </div>
-                <div class="form-group col-md-2">
-                  <label for="inputZip">Zip</label>
-                  <input type="text" class="form-control" id="inputZip">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <button type="submit" class="btn btn-primary btn-block btn-lg">Bereken BMI</button>             
                 </div>
               </div>
-              <div class="form-group">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="gridCheck">
-                  <label class="form-check-label" for="gridCheck">
-                    Check me out
-                  </label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary">Sign in</button>
-            </form>
+              
+              </form>
           </div>
           <div class="col-4"></div>
         </div>
