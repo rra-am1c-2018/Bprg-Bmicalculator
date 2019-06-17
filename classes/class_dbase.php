@@ -42,7 +42,8 @@ class Dbase {
                                     '$age', 
                                     '$gender')";
 
-    echo $sql; exit();
+    $this->conn->query($sql);
+    header("Location: ./index.php");
   }
 
   private function sanitize($raw_data) {
