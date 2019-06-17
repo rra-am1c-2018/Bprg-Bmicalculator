@@ -21,7 +21,7 @@
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="firstname">Voornaam</label>
-                  <input type="text" class="form-control" id="firstname" placeholder="" name="firtname">
+                  <input type="text" class="form-control" id="firstname" placeholder="" name="firstname">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="infix">tussenvoegsel</label>
