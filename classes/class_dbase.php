@@ -46,6 +46,21 @@ class Dbase {
     header("Location: ./index.php");
   }
 
+  public function select_all() {
+    $sql = "SELECT * FROM `bmi_data`";
+
+    $result = $this->conn->query($sql);
+
+    while ($row = $result->fetch_assoc()) {
+      echo '<tr>
+              <th scope="row">' . $row["id"] . '</th>
+              <td>' . $row["firstname"] . '</td>
+              <td>' . $row["infix"] . '</td>
+              <td>' . $row["lastname"] . '</td>
+            </tr>';
+    }
+  }
+
   private function sanitize($raw_data) {
     $data = htmlspecialchars($raw_data);
     $data = $this->conn->real_escape_string($data);

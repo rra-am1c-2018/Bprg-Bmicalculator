@@ -68,6 +68,30 @@
       
       </section>
       <section class="container">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Voornaam</th>
+            <th scope="col"></th>
+            <th scope="col">Achternaam</th>
+            <th scope="col">Gewicht</th>
+            <th scope="col">Lengte</th>
+            <th scope="col">Leeftijd</th>
+            <th scope="col">BMI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php 
+            include("./classes/class_dbase.php");
+            $dbase = new Dbase(); 
+            $dbase->select_all();
+          ?>
+        </tbody>
+      </table>
+
+
+
         <?php 
           if (isset($_POST["test"])) {
             echo "Test: " . $_POST["test"];

@@ -9,3 +9,9 @@
 .container-fluid h1 {
   font-size: 5em;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: lightblue;
+  border-color: lightblue;
+}
