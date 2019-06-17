@@ -1,4 +1,5 @@
 <?php
+include("./classes/class_bmi.php");
 
 class Dbase {
   // Fields
@@ -52,6 +53,8 @@ class Dbase {
     $result = $this->conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {
+      $bmi_calc = new Bmi(['bodymass' => $row["bodyweight"],
+                           'bodylength' => $row["bodylength"]]);
       echo '<tr>
               <th scope="row">' . $row["id"] . '</th>
               <td>' . $row["firstname"] . '</td>
@@ -61,6 +64,7 @@ class Dbase {
               <td>' . $row["bodylength"] . '</td>
               <td>' . $row["age"] . '</td>
               <td>' . $row["sex"] . '</td>
+              <td>' . $bmi_calc->calculate_bmi() . '</td>
             </tr>';
     }
   }

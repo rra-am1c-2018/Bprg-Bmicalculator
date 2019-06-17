@@ -82,7 +82,7 @@ class Bmi extends Person {
   }
 
   // We kunnen binnen de class ook methods maken (dat zijn gewoon functions)
-  private function calculate_bmi() {
+  public function calculate_bmi() {
     return $this->bodymass / ($this->bodylength * $this->bodylength);  
   }
 
