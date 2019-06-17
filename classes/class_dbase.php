@@ -57,6 +57,10 @@ class Dbase {
               <td>' . $row["firstname"] . '</td>
               <td>' . $row["infix"] . '</td>
               <td>' . $row["lastname"] . '</td>
+              <td>' . $row["bodyweight"] . '</td>
+              <td>' . $row["bodylength"] . '</td>
+              <td>' . $row["age"] . '</td>
+              <td>' . $row["sex"] . '</td>
             </tr>';
     }
   }
